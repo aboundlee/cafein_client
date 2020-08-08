@@ -60,7 +60,7 @@ const watchPosition = () => {
 
 
 const Map = ({markerStatus}) => {
-	const { state, refetch } = useAxios("/getcafes");
+	const { state, refetch } = useAxios("http://15.164.231.216:3001/getcafes");
 	const {data, error} = state;
 	// const {data: {getMarkerStatus: markerStatus}} = useQuery(GET_MARKER_STATUS);
 
