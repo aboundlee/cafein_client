@@ -1,0 +1,10 @@
+.map_container {
+	display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+#react-naver-map {    
+	flex: 1 1 0%;
+
+}
