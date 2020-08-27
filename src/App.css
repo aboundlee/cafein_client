@@ -236,7 +236,7 @@
 	/* identical to box height, or 467% */
 	color: #000000;
 	opacity: 0.5;
-  vertical-align:middle;
+  	vertical-align:middle;
 	
 	padding-left: 0.813rem;
 }
@@ -248,6 +248,21 @@
 .search_input .placeholder {
   vertical-align:middle;
 }
+
+
+.detail_div {
+	height: 10rem;
+	transition: height 0.5s
+}
+
+.detail_div-active {
+	height: 50rem;
+	transition: height 0.5s
+}
+
+
+
+
 
 /* IE10 이상을 위한 css */
 input::placeholder {

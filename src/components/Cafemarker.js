@@ -116,7 +116,7 @@ const CustomMarker = (marker_div,busy, name, icon_img) => {
 }
 */
 
-const CafeMarker = ({lat, lng, busy, busy_color, cafe_name, markerStatus}) => {
+const CafeMarker = ({lat, lng, busy, busy_color, cafe_name, markerStatus,onCafeClick}) => {
 	let title, marker_div, franchiseIcon='', iconImgArray, rand_index, busyText='';
 
 	iconImgArray = [ '<img src="/images/marker/HollysCoffee.svg" class="franchise_img" alt="cafe">', '<img src="/images/marker/Starbucks.svg" class="franchise_img" alt="cafe">', '<img src="/images/marker/TomNToms.svg" class="franchise_img" alt="cafe">'];
@@ -153,7 +153,10 @@ const CafeMarker = ({lat, lng, busy, busy_color, cafe_name, markerStatus}) => {
 		<Marker
 			position={{ lat: lat, lng: lng }}
 			icon={CustomMarker(marker_div, busyPercent, cafe_name, busyText, franchiseIcon, markerStatus)}
-			title= {title}
+            title= {title}
+            onClick={()=> {
+                onCafeClick({lat: lat, lng: lng, cafe_name: cafe_name});
+            }}
 		/>
 	)
 }

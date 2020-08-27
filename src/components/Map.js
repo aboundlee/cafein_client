@@ -59,12 +59,12 @@ const watchPosition = () => {
 
 
 
-const Map = ({markerStatus}) => {
+const Map = ({markerStatus, onCafeClick}) => {
 //	const { state, refetch } = useAxios("/getcafes");
 //	const {data, error} = state;
 	// const {data: {getMarkerStatus: markerStatus}} = useQuery(GET_MARKER_STATUS);
 
-let data = {
+let data = [{
     name: '할리스커피 고대안암점',
     lat: 37.5847549,
     lon: 127.0292435,
@@ -73,7 +73,17 @@ let data = {
     seat: -1,
     area: -1,
     noise: -1
-  };
+  },
+  {
+    name: '고양시카페',
+    lat: 37.6231076,
+    lon: 126.83512239999999,
+    busy: '[[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0]]',
+    outlet: -1,
+    seat: -1,
+    area: -1,
+    noise: -1
+  }];
 
 
 
@@ -177,7 +187,7 @@ let data = {
 				onZoomChanged={zoomListener => { setZoom(zoomListener) }}
 			>
 				{ render_cafes  && render_cafes.map((cafe, index) => (
-					<CafeMarker lat={cafe.lat} lng={cafe.lon} busy={cafe.cur_busy} busy_color={cafe.cur_busy_color} cafe_name={cafe.name} key={index} markerStatus={markerStatus}/>
+					<CafeMarker lat={cafe.lat} lng={cafe.lon} busy={cafe.cur_busy} busy_color={cafe.cur_busy_color} cafe_name={cafe.name} key={index} markerStatus={markerStatus} onCafeClick={onCafeClick}/>
 				))}
 
 				{ userPos && <GpsMarker lat={userPos.lat} lng={userPos.lng} key='1'/> }
