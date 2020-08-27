@@ -31,6 +31,19 @@ const App = () => {
         const {data, refetch, loading, error} = useQuery(GET_MARKER_STATUS);
         let markerStatus; 
 
+		const [show, setShow] = useState(false);
+		const [selectedStore, setSelectedStore] = useState({});
+
+		const handleShow = () => setShow(true);
+		const handleClose = () => setShow(false);
+
+		const onCafeClick = (store) => {
+			setSelectedStore(store);
+			handleShow();
+			
+		};
+
+
         useEffect(() => {
             refetch();
         },[buttonListener]);
@@ -43,6 +56,7 @@ const App = () => {
         if (data) {
             markerStatus = data.getMarkerStatus;
         }
+
 
     
 
@@ -60,9 +74,9 @@ const App = () => {
 						<img src="/images/ui/menu/activate.svg" className="menu_activate" alt="menu"></img>
 				</div>
 
-				<Map markerStatus={markerStatus}/>
+				<Map markerStatus={markerStatus} onCafeClick={ onCafeClick } />
 				
-                <Search setButtonListener={setButtonListener}/>
+                <Search setButtonListener={setButtonListener} setShow={show} onCafeClose={handleClose} selectedStore={selectedStore}/>
 
 				</div>
 			</RenderAfterNavermapsLoaded>
