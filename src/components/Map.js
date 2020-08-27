@@ -59,10 +59,11 @@ const watchPosition = () => {
 
 
 
-const Map = ({markerStatus}) => {
+const Map = ({markerStatus, onCafeClick}) => {
 	const { state, refetch } = useAxios("/getcafes");
 	const {data, error} = state;
 // const {data: {getMarkerStatus: markerStatus}} = useQuery(GET_MARKER_STATUS);
+
 
     
 
@@ -170,7 +171,7 @@ const Map = ({markerStatus}) => {
 				onZoomChanged={zoomListener => { setZoom(zoomListener) }}
 			>
 				{ render_cafes  && render_cafes.map((cafe, index) => (
-					<CafeMarker lat={cafe.lat} lng={cafe.lon} busy={cafe.cur_busy} busy_color={cafe.cur_busy_color} cafe_name={cafe.name} key={index} markerStatus={markerStatus}/>
+					<CafeMarker lat={cafe.lat} lng={cafe.lon} busy={cafe.cur_busy} busy_color={cafe.cur_busy_color} cafe_name={cafe.name} key={index} markerStatus={markerStatus} onCafeClick={onCafeClick}/>
 				))}
 
 				{ userPos && <GpsMarker lat={userPos.lat} lng={userPos.lng} key='1'/> }
