@@ -48,10 +48,10 @@ const App = () => {
             refetch();
         },[buttonListener]);
     
-				if (loading) {
-					console.log(loading);
-					return (<p>loading..</p>);
-				}
+		if (loading) {
+			console.log(loading);
+			return (<p>loading..</p>);
+		}
 
         if (data) {
             markerStatus = data.getMarkerStatus;
@@ -64,7 +64,7 @@ const App = () => {
 
 		return (
 			<RenderAfterNavermapsLoaded
-				ncpClientId={process.env.REACT_APP_NAVERMAP_CLIENT_KEY} // 자신의 네이버 계정에서 발급받은 Client ID
+				ncpClientId={"xh3x53ga8k"} // 자신의 네이버 계정에서 발급받은 Client ID
 				error={<p>Maps Load Error</p>}
 				loading={<p>Maps Loading...</p>}
 			>
@@ -72,7 +72,7 @@ const App = () => {
 					<div className="menu_div">
 						<img src="/images/ui/menu/hamburger.svg" className="menu_hamburger" alt="menu"></img>
 						<img src="/images/ui/menu/activate.svg" className="menu_activate" alt="menu"></img>
-				</div>
+					</div>
 
 				<Map markerStatus={markerStatus} onCafeClick={ onCafeClick } />
 				
