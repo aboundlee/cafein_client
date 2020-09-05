@@ -123,7 +123,7 @@
 }
 
 .search_group {
-	position: relative;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
   	z-index: 1001;
@@ -612,12 +612,14 @@
   position: absolute;
   z-index: 1000;
   width: 3.125rem;
-  right: 0.438rem;
-  bottom: 7.875rem;
-
+  right: 1%;
+  top: -7rem;
+}
+.map_controller-active {
+  display: none;
 }
 
-.map_controller > .gps_div {
+.gps_div {
 
 	position: relative;
 	z-index: 10;
@@ -625,7 +627,7 @@
 	height: 3.125rem;
 }
 
-.map_controller > .gps_div > .gps_btn {
+.gps_btn {
 	display: block;
   background: url(/images/ui/GPSBtn.svg) no-repeat ;
   background-size: cover;
@@ -634,16 +636,15 @@
 	z-index: 10;
 }
 
-.map_controller > .marker_change_div {
+.marker_change_div {
 	position: relative;
 	z-index: 10;
 	width: 3.125rem;
 	height: 3.125rem;
-
-
 }
 
-.map_controller > .marker_change_div > .marker_change_percent {
+
+.marker_change_percent {
 	display: block;
   background: url(/images/ui/PercentBtn.svg) no-repeat ;
   background-size: cover;
@@ -652,7 +653,7 @@
 	z-index: 10;
 }
 
-.map_controller > .marker_change_div > .marker_change_text {
+.marker_change_text {
 	display: block;
   background: url(/images/ui/TextBtn.svg) no-repeat ;
   background-size: cover;

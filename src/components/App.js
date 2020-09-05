@@ -64,7 +64,8 @@ const App = () => {
 
 		return (
 			<RenderAfterNavermapsLoaded
-				ncpClientId={process.env.REACT_APP_NAVERMAP_CLIENT_KEY} // 자신의 네이버 계정에서 발급받은 Client ID
+				// ncpClientId={process.env.REACT_APP_NAVERMAP_CLIENT_KEY} // 자신의 네이버 계정에서 발급받은 Client ID
+				ncpClientId={"xh3x53ga8k"} // 자신의 네이버 계정에서 발급받은 Client ID
 				error={<p>Maps Load Error</p>}
 				loading={<p>Maps Loading...</p>}
 			>

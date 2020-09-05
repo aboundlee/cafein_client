@@ -107,19 +107,22 @@ const Search = ({setButtonListener, setShow, onCafeClose, selectedStore}) => {
     return (
         					
             <div className={`search_group`} >
+                { !isfull &&
+                
+                < div className={`map_controller`}> 
 
-                < div className="map_controller"> 
-
-                    <div className="marker_change_div">
-                                                    { markerStatus ==="percent" && <a href="/#" className="marker_change_text"  onClick={handleClick}> </a> }
-                                                    {  markerStatus === "text" && <a href="/#" className="marker_change_percent"  onClick={handleClick}> </a> }
-                    </div>
-
-                    <div className="gps_div">
-                        <a href="/#" className="gps_btn"> </a>
-                    </div>
-
+                <div className={`marker_change_div`}>
+                                                { markerStatus ==="percent" && <a href="/#" className="marker_change_text"  onClick={handleClick}> </a> }
+                                                {  markerStatus === "text" && <a href="/#" className="marker_change_percent"  onClick={handleClick}> </a> }
                 </div>
+
+                <div className="gps_div">
+                    <a href="/#" className="gps_btn"> </a>
+                </div>
+
+            </div>
+                }
+                
 
                 {!isfull &&
                     <>
@@ -158,11 +161,11 @@ const Search = ({setButtonListener, setShow, onCafeClose, selectedStore}) => {
 
                                     <div>
                                             <svg  width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="0.25" y="0.25" width="15.5" height="15.5" rx="7.75" stroke="#0047FF" stroke-width="0.5"/>
-                                            <path d="M4.5 9.26353H9.33545L10.984 3" stroke="#0047FF" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M6.25871 9.26364L5.06299 13" stroke="#0047FF" stroke-miterlimit="10"/>
-                                            <path d="M9.39648 9.26364L10.5922 13" stroke="#0047FF" stroke-miterlimit="10"/>
-                                            <path d="M5.66003 11.1325H9.99515" stroke="#0047FF" stroke-miterlimit="10"/>
+                                            <rect x="0.25" y="0.25" width="15.5" height="15.5" rx="7.75" stroke="#0047FF" strokeWidth="0.5"/>
+                                            <path d="M4.5 9.26353H9.33545L10.984 3" stroke="#0047FF" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M6.25871 9.26364L5.06299 13" stroke="#0047FF" strokeMiterlimit="10"/>
+                                            <path d="M9.39648 9.26364L10.5922 13" stroke="#0047FF" strokeMiterlimit="10"/>
+                                            <path d="M5.66003 11.1325H9.99515" stroke="#0047FF" strokeMiterlimit="10"/>
                                             </svg>
                                     </div>
 
@@ -172,9 +175,9 @@ const Search = ({setButtonListener, setShow, onCafeClose, selectedStore}) => {
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0)">
                                             <path d="M8.14302 11.6063C6.161 11.6063 4.5542 9.99878 4.5542 8.01642V6.16061H11.7329V8.01642C11.7329 9.99869 10.1262 11.6063 8.14302 11.6063Z" fill="white" stroke="#0047FF" stroke-miterlimit="10"/>
-                                            <path d="M5.99951 5.66057V2.5" stroke="#0047FF" stroke-miterlimit="10"/>
-                                            <path d="M10.2876 5.66057V2.5" stroke="#0047FF" stroke-miterlimit="10"/>
-                                            <path d="M8.14307 12.1064V14.5001" stroke="#0047FF" stroke-miterlimit="10"/>
+                                            <path d="M5.99951 5.66057V2.5" stroke="#0047FF" strokeMiterlimit="10"/>
+                                            <path d="M10.2876 5.66057V2.5" stroke="#0047FF" strokeMiterlimit="10"/>
+                                            <path d="M8.14307 12.1064V14.5001" stroke="#0047FF" strokeMiterlimit="10"/>
                                             </g>
                                             <rect x="0.25" y="0.25" width="15.5" height="15.5" rx="7.75" stroke="#0047FF" stroke-width="0.5"/>
                                             <defs>
