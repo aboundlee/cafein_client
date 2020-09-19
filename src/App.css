@@ -125,7 +125,7 @@
 .search_group {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+    width: 100%;
   	z-index: 1001;
 	background: white;
 	border-radius: 20px 20px 0px 0px;
